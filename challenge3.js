@@ -1,4 +1,4 @@
-//NHIF
+//NHIF department
 
 function calculateDeduction(grossPay) {
 
@@ -80,7 +80,7 @@ function calculateDeduction(grossPay) {
 
  
 
-  //NSSF
+  //NSSF department
 
   function calculatePensionablePayTier(pay) {
 
@@ -90,7 +90,7 @@ function calculateDeduction(grossPay) {
 
  
 
- //Tax rates
+ //Tax rates 
 
  function calculateTaxRate(monthlyTaxablePay) {
 

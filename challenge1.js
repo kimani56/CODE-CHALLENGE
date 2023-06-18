@@ -1,27 +1,26 @@
-function calculateGrade() {
-    let marks = prompt("Enter student marks (between 0 and 100):");
-    marks = parseInt(marks);
-  
-    if (isNaN(marks) || marks < 0 || marks > 100) {
-      console.log("Invalid input. Please enter a valid mark between 0 and 100.");
-      return;
-    }
-  
-    let grade;
-  
-    if (marks > 79) {
-      grade = "A";
-    } else if (marks >= 60 && marks <= 79) {
-      grade = "B";
-    } else if (marks >= 50 && marks <= 59) {
-      grade = "C";
-    } else if (marks >= 40 && marks <= 49) {
-      grade = "D";
+const marks = process.argv.slice(2);
+const parsedMarks = marks.map(mark => parseInt(mark));
+
+if (parsedMarks.every(mark => mark >= 0 && mark <= 100)) {
+
+  const grades = parsedMarks.map(mark => {
+    if (mark > 79) {
+      return "A";
+    } else if (mark >= 60 && mark <= 79) {
+      return "B";
+    } else if (mark >= 50 && mark <= 59) {
+      return "C";
+    } else if (mark >= 40 && mark <= 49) {
+      return "D";
     } else {
-      grade = "E";
+      return "E";
     }
-  
-    console.log(`Grade: ${grade}`);
-  }
+  });
 
 
+  grades.forEach((grade, index) => {
+    console.log(`Grade for mark ${parsedMarks[index]}: ${grade}`);
+  });
+} else {
+  console.log("Invalid input! Please enter marks between 0 and 100.");
+}
