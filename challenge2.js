@@ -1,7 +1,7 @@
-// Prompt the user for input
+// ask the user for input
 var speed = parseInt(prompt("Enter the car's speed (in km/h):"));
 
-// Define the speed limit and the demerit points increment
+// enter the speed limit and the demerit points increment
 var speedLimit = 70;
 var demeritPointsIncrement = 5;
 
